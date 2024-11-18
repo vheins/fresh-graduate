@@ -1,5 +1,5 @@
 {
-    "name": "laravel/laravel",
+    "name": "vheins/fresh-grade",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
@@ -10,7 +10,9 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "lorisleiva/laravel-actions": "*",
+        "nwidart/laravel-modules": "^11.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -58,6 +60,11 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "modules/*/composer.json"
+            ]
         }
     },
     "config": {
@@ -66,7 +73,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "minimum-stability": "stable",
