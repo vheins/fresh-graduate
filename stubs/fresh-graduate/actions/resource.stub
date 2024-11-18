@@ -1,0 +1,16 @@
+<?php
+
+namespace $MODULE_NAMESPACE$\$STUDLY_NAME$\Actions;
+
+use Lorisleiva\Actions\Concerns\AsAction;
+use $MODULE_NAMESPACE$\$STUDLY_NAME$\Models\$STUDLY_NAME$ as $STUDLY_NAME$Model;
+
+class Resource
+{
+    use AsAction;
+
+    public function handle($STUDLY_NAME$Model $$LOWER_NAME$): $STUDLY_NAME$Model|array
+    {
+        return $$LOWER_NAME$;
+    }
+}

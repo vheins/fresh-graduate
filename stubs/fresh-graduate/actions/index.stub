@@ -1,0 +1,20 @@
+<?php
+
+namespace $MODULE_NAMESPACE$\$STUDLY_NAME$\Actions;
+
+use Illuminate\Http\Request;
+use Lorisleiva\Actions\Concerns\AsAction;
+use $MODULE_NAMESPACE$\$STUDLY_NAME$\Models\$STUDLY_NAME$ as $STUDLY_NAME$Model;
+use $MODULE_NAMESPACE$\$STUDLY_NAME$\Resources\$STUDLY_NAME$Resource;
+
+class Index
+{
+    use AsAction;
+
+    public function handle(Request $request): $STUDLY_NAME$Resource
+    {
+        $query = $STUDLY_NAME$Model::query();
+        $query->search($request);
+        return $STUDLY_NAME$Resource::collection($query);
+    }
+}
